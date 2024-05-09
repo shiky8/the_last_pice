@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <title> the last pice </title>
+    <link rel="icon" type="image/x-icon" href="static/last-piece-1958.jpg">
+    <link rel="stylesheet" href="static/GlassEffect.css">
+</head>
+<body style="background-image: url('static/last-piece-1958.jpg')">
+    <main>
+        <section class="glass">
+            <div style="text-align: center;">
+                <label>Encode</label>
+            </div>
+            <br/>
+            <div>
+                <form action="{{ url_for('encode')}}" method="post" style="text-align: center;">
+                    plain_text: <input type="text" id="plain_text" name="plain_text">
+                    <input type="submit" value="encode">
+                </form>
+            </div>
+            <br/>
+            <div  style="visibility: {{ehidden}}">
+                <span> cipher:</span>
+                <label>{{cipher}}</label>
+                <br/>
+                <span> key:</span>
+                <label>{{key}}</label>
+            </div>
+        </section>
+        <br/>
+        <span></span>
+        <section class="glass">
+            <div style="text-align: center;">
+                <label>Dencode</label>
+            </div>
+            <br/>
+            <div>
+                <form action="{{ url_for('decode')}}" method="post" style="text-align: center;">
+                    cipher:<textarea id="ciphertext" name="ciphertext"></textarea> 
+                    key: <input type="text" id="key" name="key">
+                    <input type="submit" value="encode">
+                </form>
+            </div>
+            <br/>
+            <div style="visibility: {{dhidden}}">
+                <span> plain_text:</span>
+                <label>{{plain_text}}</label>    
+            </div>
+        </section>
+    </main>
+</body>
+
+
+</html>
