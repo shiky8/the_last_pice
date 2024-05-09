@@ -15,6 +15,9 @@ new symmetric encryption that encode you plain text to music list
 2) run generate.py `python3 generate.py`
 3) remove the last , in gnera_last_pice.json
 
+
+# it isn't strong algorithm but it check for the key and the cipher text if they are matched 
+
 ![ cli](https://github.com/shiky8/the_last_pice/blob/main/lastpice.png?raw=true)
 
 
