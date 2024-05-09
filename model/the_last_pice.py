@@ -66,11 +66,14 @@ class LastPice:
 
 		plane_text = "".join(plane_text_list)
 		return plane_text
-
+def Convert(cipher):
+        cipher = cipher.replace("[",'').replace("]",'').replace("'",'').replace(",",'')
+        li = list(cipher.split()) 
+        return li 
 if __name__=="__main__":
 	# plane_text = "asdfghjklzxcvbnmqwertyuiop ASDFGHJKLZXCVBNMQWERTYUIOP 0123456789 10 22 /\"\\!<?:;'[]{}!@#$%^&*() "
 
-	plane_text = "hi  "
+	plane_text = str(input("enter the plain text: "))
 
 	print(f"before plane_text = {plane_text}\n")
 	key,cipher = LastPice.encode(plane_text)
@@ -86,5 +89,8 @@ if __name__=="__main__":
 	# cipher = cipher.split(',')
 	# cipher = list(cipher)
 	# print(cipher)
+	key = str(input("enter the key: "))
+	cipher = str(input("enter the cipher text: "))
+	cipher = Convert(cipher)
 	plane_text = LastPice.decode(key,cipher)
 	print(f"plane_text = {plane_text}")
